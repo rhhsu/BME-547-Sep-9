@@ -5,6 +5,15 @@ def check_HDL(HDL_result):
         return "Borderline low"
     else:
         return "low"
+
+def cholestorol_interface():
+    print("Cholestorol check")
+    chol_input = input("Enter your cholestorol test result:")
+    chol_data = chol.split("=")
+    if chol_data[0] == "HDL":
+        result = check_HDL(chol_data[1])
+        print("The cholestorol level is {}.".format(result))
+
 def interface():
     print("My calculator program")
     keep_running = True

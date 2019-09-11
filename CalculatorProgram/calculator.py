@@ -1,3 +1,4 @@
+# incomplete
 def check_HDL(HDL_result):
     if HDL_result >= 60:
         return "Normal"
@@ -20,6 +21,10 @@ def cholestorol_interface():
     print("Cholestorol check")
     chol_input = input("Enter your cholestorol test result:")
     chol_data = chol.split("=")
+    if chol_data[0] in ["LDL", "HDL", "TLC"]:
+        print("Good input")
+    else:
+        print("Bad input")
     if chol_data[0] == "HDL":
         result = check_HDL(chol_data[1])
         print("The cholestorol level is {}.".format(result))
@@ -36,5 +41,5 @@ def interface():
             keep_running = False
     return
 
-    if __name__ == '__main__':
-        interface()
+if __name__ == '__main__':
+    interface()
